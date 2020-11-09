@@ -1,0 +1,21 @@
+#server:
+#  port: 4001
+
+#指定当前eureka客户端的注册地址 所有的服务都必须注册到eureka上
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:#{server.port}/eureka
+      defaultZone: http://127.0.0.1:8002/eureka,http://127.0.0.1:8003/eureka
+    register-with-eureka: false  #自身不向eureka注册
+    fetch-registry: false #启动时禁止client的注册
+  instance:
+    hostname: localhost
+
+
+
+#指定应用名称
+spring:
+  application:
+    name: eureka-server
+
